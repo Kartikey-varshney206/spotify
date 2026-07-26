@@ -1,60 +1,16 @@
-# Spotify Top Tracks Dashboard 🎵
+# React + Vite
 
-A stunning, modern web application built with **React** and **Vite** that integrates with the Spotify API to display your top 10 most listened-to songs as rotating musical discs. It also features a beautiful, floating "Now Playing" bar that polls your current playback in real-time.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Features ✨
+Currently, two official plugins are available:
 
-- **Secure Spotify Authentication:** Uses the PKCE Authorization Code flow to securely authenticate without exposing secrets.
-- **Top Tracks Fetching:** Automatically queries the Spotify API to pull your Top 10 most listened-to tracks.
-- **Auto-Refreshing Tokens:** Background token refresh means you never have to sign in again after your first login!
-- **Record Disc UI:** Each track is displayed as a vinyl record featuring the album cover in the center, spinning with a continuous CSS animation.
-- **Now Playing Bar:** A stylish glassmorphism bar pinned to the bottom of the screen showing your currently playing track on Spotify (polls every 10 seconds), complete with playback progress and a spinning album art!
-- **Premium Aesthetics:** Dark mode, glassmorphism UI elements, and sleek typography using the 'Inter' font to mimic modern web app standards.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Project Structure 📁
+## React Compiler
 
-```text
-spotify-top-tracks/
-├── public/
-├── src/
-│   ├── api/
-│   │   └── spotify.js          # Spotify API integrations & PKCE Auth
-│   ├── components/
-│   │   ├── Dashboard.jsx       # Main tracks grid
-│   │   ├── Login.jsx           # Spotify login prompt
-│   │   ├── NowPlayingBar.jsx   # Floating currently playing bar
-│   │   └── RecordDisc.jsx      # Individual spinning vinyl record component
-│   ├── App.jsx                 # App root & Auth routing
-│   ├── App.css                 # Component specific styles
-│   ├── index.css               # Global theme & animations
-│   └── main.jsx                # React DOM entry
-├── .env.example                # Example environment variables
-├── package.json
-├── vite.config.js              # Vite configuration
-└── README.md
-```
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Setup Instructions 🚀
+## Expanding the Oxlint configuration
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Kartikey-varshney206/spotify-player.git
-   cd spotify-player
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Setup Environment Variables:
-   - Copy `.env.example` to `.env`
-   - Go to your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) and create an app.
-   - Set the Redirect URI in your Spotify app settings to `http://127.0.0.1:5173/callback`.
-   - Fill in your `.env` file with the Client ID and Client Secret.
-
-4. Run the app:
-   ```bash
-   npm run dev
-   ```
-   Open your browser to `http://127.0.0.1:5173` and enjoy your musical dashboard!
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
