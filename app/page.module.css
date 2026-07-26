@@ -54,7 +54,7 @@
 }
 
 .floatingPlayerCard:hover {
-  transform: translateX(-50%) scale(1.02);
+  transform: scale(1.02);
   background: rgba(40, 40, 40, 0.8);
 }
 
