@@ -38,10 +38,12 @@
 }
 
 .floatingPlayerCard {
-  background: rgba(24, 24, 24, 0.7);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.05); /* True glassmorphism requires high transparency */
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-left: 1px solid rgba(255,255,255,0.2);
   border-radius: 100px; /* Pill shape */
   padding: 0.75rem 1.5rem 0.75rem 0.75rem;
   display: flex;
@@ -55,7 +57,9 @@
 
 .floatingPlayerCard:hover {
   transform: scale(1.02);
-  background: rgba(40, 40, 40, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.8);
 }
 
 .nowPlayingImage {
@@ -129,11 +133,14 @@
   color: var(--text-secondary);
   font-weight: 500;
   padding: 1rem 2rem;
-  background: rgba(24, 24, 24, 0.8);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-left: 1px solid rgba(255,255,255,0.2);
   border-radius: 100px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* Top Tracks - Grid Layout */
