@@ -54,9 +54,9 @@ export default function NowPlaying() {
 
   if (!nowPlaying.is_playing) {
     return (
-      <div className={styles.nowPlayingContainer}>
-        <div className={styles.notPlaying}>
-          <div className={styles.spotifyIcon}></div>
+      <div className={styles.floatingPlayerWrapper}>
+        <div className={styles.notPlayingFloating}>
+          <div className={styles.spotifyIconFloating} style={{ margin: 0 }}></div>
           <span>Not listening to anything right now</span>
         </div>
       </div>
@@ -66,24 +66,25 @@ export default function NowPlaying() {
   const progressPercentage = (localProgress / nowPlaying.duration_ms) * 100;
 
   return (
-    <div className={styles.nowPlayingContainer}>
-      <h2 className={styles.sectionTitle}>Currently Playing</h2>
+    <div className={styles.floatingPlayerWrapper}>
       <a
         href={nowPlaying.songUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.nowPlayingCard}
+        className={styles.floatingPlayerCard}
       >
-        <div className={styles.nowPlayingHeader}>
-          <img src={nowPlaying.albumArt} alt={nowPlaying.title} className={styles.nowPlayingImage} />
-          <div className={styles.nowPlayingInfo}>
-            <div className={styles.nowPlayingTitle}>{nowPlaying.title}</div>
-            <div className={styles.nowPlayingArtist}>{nowPlaying.artist}</div>
-          </div>
+        <img src={nowPlaying.albumArt} alt={nowPlaying.title} className={styles.nowPlayingImage} />
+        
+        <div className={styles.nowPlayingInfo}>
+          <div className={styles.nowPlayingTitle}>{nowPlaying.title}</div>
+          <div className={styles.nowPlayingArtist}>{nowPlaying.artist}</div>
         </div>
-        <div className={styles.progressContainer}>
+
+        <div className={styles.spotifyIconFloating}></div>
+
+        <div className={styles.progressContainerFloating}>
           <div
-            className={styles.progressBar}
+            className={styles.progressBarFloating}
             style={{ width: `${progressPercentage}%` }}
           ></div>
         </div>

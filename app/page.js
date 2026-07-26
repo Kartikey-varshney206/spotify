@@ -15,14 +15,10 @@ export default function Home() {
         <p className={styles.subtitle}>My Spotify Listening Habits</p>
       </header>
 
-      <div className={styles.dashboardGrid}>
-        <div className={styles.leftColumn}>
-          <NowPlaying />
-        </div>
-        <div className={styles.rightColumn}>
-          <TopTracks />
-        </div>
-      </div>
+      <TopTracks />
+      
+      {/* Now Playing is styled to float at the bottom of the screen */}
+      <NowPlaying />
     </main>
   );
 }

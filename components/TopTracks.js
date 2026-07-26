@@ -6,7 +6,6 @@ import styles from "../app/page.module.css";
 export default function TopTracks() {
   const [tracks, setTracks] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const [errorMsg, setErrorMsg] = useState(null);
 
   useEffect(() => {
@@ -34,26 +33,34 @@ export default function TopTracks() {
 
   if (loading) return <div className={styles.loading}>Loading top tracks...</div>;
   if (errorMsg) return (
-    <div className={styles.topTracksContainer}>
-      <h2 className={styles.sectionTitle}>Top Tracks</h2>
+    <section className={styles.topTracksSection}>
+      <h2 className={styles.topTracksTitle}>Your Top Tracks</h2>
       <div className={styles.loading} style={{color: '#e74c3c'}}>{errorMsg}</div>
-    </div>
+    </section>
   );
 
   return (
-    <div className={styles.topTracksContainer}>
-      <h2 className={styles.sectionTitle}>Top Tracks</h2>
-      <div className={styles.trackList}>
+    <section className={styles.topTracksSection}>
+      <h2 className={styles.topTracksTitle}>
+        <div style={{width: 16, height: 16, borderRadius: '50%', background: '#1DB954', boxShadow: '0 0 12px rgba(29, 185, 84, 0.6)'}}></div>
+        Your Top Tracks
+      </h2>
+      
+      <div className={styles.tracksGrid}>
         {tracks.map((track, index) => (
           <a
             key={index}
             href={track.songUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.trackItem}
+            className={styles.trackCard}
           >
-            <span className={styles.trackRank}>{index + 1}</span>
-            <img src={track.albumArt} alt={track.title} className={styles.trackImage} />
+            <div className={styles.trackImageWrapper}>
+              <img src={track.albumArt} alt={track.title} className={styles.trackImage} />
+              <div className={styles.trackRankBadge}>{index + 1}</div>
+              <div className={styles.trackPlayOverlay}></div>
+            </div>
+            
             <div className={styles.trackInfo}>
               <div className={styles.trackTitle}>{track.title}</div>
               <div className={styles.trackArtist}>{track.artist}</div>
@@ -61,6 +68,6 @@ export default function TopTracks() {
           </a>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
