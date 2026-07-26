@@ -20,6 +20,10 @@
 
 html, body {
   background-color: var(--background-dark);
+  background-image: url('/music-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
